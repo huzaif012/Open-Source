@@ -93,12 +93,15 @@ public class TreemapHandson {
                 }
             }
             else if(queryType.length == 1) {
-                TreeMap<String,Integer> nameWithAverageScore = this.createMatchesMap(cricketDataset);
-                Map.Entry<String,Integer> maxEntry = null;
-                for(Map.Entry<String,Integer> entry: nameWithAverageScore.entrySet()) {
-                    if(maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
-                        maxEntry = entry;
-                    }
+                TreeMap<String, Integer> nameWithAverageScore = this.createMatchesMap(cricketDataset);
+        	Map.Entry<String, Integer> maxEntry = null;
+
+        	for (Map.Entry<String, Integer> entry : nameWithAverageScore.entrySet()) {
+            	if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+                maxEntry = entry;
+            }
+        }
+
                 }
                 result = "The Efficient Opener is "+ maxEntry.getKey();
             }
